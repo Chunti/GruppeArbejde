@@ -1,14 +1,25 @@
+DiceCup diceCup;                                     //Makes our class avalible everywhere
+
 void setup() {
-  size(800, 800);
-  rectMode(CENTER);
-  ellipseMode(CENTER);
-  DiceCup diceCup = new DiceCup();
-  diceCup.addDie(15);
-  diceCup.shake();
-  diceCup.draw(50, 50, 50);
+  size(1000, 800);                                   //Sets the window size
+  background(255);                                   //Sets the background
+  rectMode(CENTER);                                  //Sets the squares to center mode
+  ellipseMode(CENTER);                               //Sets the dots to center mode
+  diceCup = new DiceCup();                           //Initialize the dicecup object
+  diceCup.addDie(15);                                //Adds a number of dices to the dicecup
+}
 
+void draw() {
+}                                        //Makes the program run
 
-  //die.roll();
-  //println("der er rollet " + die.getDieValue);
-  //die.draw(100,100,200);
+void mousePressed() {
+  background(255);                                   //repainting the background
+  diceCup.shake();                                   //Rerolls the dices
+  diceCup.draw(75, 75, 75);                          //draws the dices
+}
+
+void keyPressed() {                                   //When a key is pressed
+  int tast = keyCode;                                //Reads which key is pressed
+  if (tast == 'W') diceCup.addDie(1);                //Adds a die to the dicecup
+  else if (tast == 'R') diceCup.removeDie();          //Removes a die from the dicecup
 }
