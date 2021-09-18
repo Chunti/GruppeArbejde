@@ -6,11 +6,11 @@ void setup() {
   rectMode(CENTER);                                  //Sets the squares to center mode
   ellipseMode(CENTER);                               //Sets the dots to center mode
   diceCup = new DiceCup();                           //Initialize the dicecup object
-  diceCup.addDie(5);                                 //Adds a number of dices to the dicecup
+  diceCup.addDie(15);                                //Adds a number of dices to the dicecup
 }
 
 void draw() {
-}                                                    //Makes the program run
+}                                        //Makes the program run
 
 void mousePressed() {
   background(255);                                   //repainting the background
@@ -18,8 +18,8 @@ void mousePressed() {
   diceCup.draw(75, 75, 75);                          //draws the dices
 }
 
-void keyPressed() {                                  //When a key is pressed
+void keyPressed() {                                   //When a key is pressed
   int tast = keyCode;                                //Reads which key is pressed
   if (tast == 'W') diceCup.addDie(1);                //Adds a die to the dicecup
-  else if (tast == 'R') diceCup.removeDie();         //Removes a die from the dicecup
+  else if (tast == 'R') diceCup.removeDie();          //Removes a die from the dicecup
 }

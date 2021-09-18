@@ -12,7 +12,7 @@ class DiceCup {
 
   public void removeDie()
   {
-    if (dices.size()>0) dices.remove(dices.size()-1);         //removes the last die in the arrayList
+    if(dices.size()>0) dices.remove(dices.size()-1);         //removes the last die in the arrayList
   }
 
   public void shake() {
