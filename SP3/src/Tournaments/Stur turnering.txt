@@ -1,0 +1,8 @@
+TeamChessAlot,Magnus,Giri,6
+TeamFrasier,Frasier,Niles,10
+Uninteligible,Zack,Louise,10
+FamilyGuy,Brian,Stewie,5
+TeamPeter,Peter,Hans,0
+WoWSquard,Uther,Varian,0
+Uninteligible2,Gobi,Mads,0
+TeamMogens,Mogens,Gunner,0

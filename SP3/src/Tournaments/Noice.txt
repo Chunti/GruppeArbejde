@@ -1,0 +1,14 @@
+TeamFrasier,Frasier,Niles,2
+TeamPeter,Peter,Hans,10
+WoWSquard,Uther,Varian,9
+Uninteligible,Zack,Louise,10
+Uninteligible2,Gobi,Mads,1
+TeamChessAlot,Magnus,Giri,10
+TeamMogens,Mogens,Gunner,6
+FamilyGuy,Brian,Stewie,10
+TeamPeter,Peter,Hans,7
+Uninteligible,Zack,Louise,10
+TeamChessAlot,Magnus,Giri,1
+FamilyGuy,Brian,Stewie,10
+Uninteligible,Zack,Louise,6
+FamilyGuy,Brian,Stewie,10

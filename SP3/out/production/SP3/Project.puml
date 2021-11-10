@@ -1,0 +1,42 @@
+@startuml
+Main *-- UI
+UI *-- Data
+Data --* Tournament
+Tournament *-- Match
+
+Main : static ArrayList<Team> teams
+Main : Tournament tournament
+Main : UI ui
+
+UI : Scanner scan
+UI : int userInput
+UI : mainMenu()
+UI : tournamentMenu()
+UI : teamMenu()
+UI : matchMenu()
+
+Data : void CreateTournamentData()
+Data : void NextMatch()
+Data : void readData(int)
+Data : void saveTeamData()
+
+Tournament : String tournamentName
+Tournament : ArrayList<Match> matches
+Tournament : addMatch()
+Tournament : createTournamentStrucktur()
+Tournament : getLastMatchGoals()
+
+Match : String[] team1
+Match : String[] team2
+Match : int team1Goals
+Match : int team2Goals
+Match : setTeam1(String[])
+Match : setTeam2(String[])
+Match : void setGoals1(int)
+Match : void setGoals2(int)
+Match : void getGoals1()
+Match : void getGoals2()
+
+
+
+@enduml
