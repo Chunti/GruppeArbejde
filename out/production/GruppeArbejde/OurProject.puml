@@ -1,11 +1,33 @@
 @startuml
-Main *-- UI
-UI *-- Data
-Data --* Tournament
-Tournament *-- Match
+UI *-- Main
+Controller *-- UI
+Tournament --* Match
+Team *-- Match
+Controller --* Tournament
+Controller --* Data
+Controller --* Match
+Controller --* Team
+Data --* DBConnector
 
-Main : Tournament tournament
 Main : UI ui
+
+Controller : ArrayList <Team>
+Controller : ArrayList <Match>
+Controller : createTournament(Match)
+Controller : createTeam()
+Controller : playNextMatch()
+
+Team : String teamName
+Team : String player1
+Team : String player2
+
+Team : String getTeamName()
+Team : String getPlayer1()
+Team : String getPlayer2()
+Team : void setTeamName(String teamName)
+Team : void setPlayer1(String player1)
+Team : void setPlayer2(String player2)
+Team : void toString()
 
 UI : Scanner scan
 UI : int userInput
@@ -26,8 +48,8 @@ Tournament : createTournamentStrucktur()
 Tournament : getLastMatchGoals()
 Tournament : getLastMatchGoals()
 
-Match : String[] team1
-Match : String[] team2
+Match : Team team1
+Match : Team team2
 Match : int team1Goals
 Match : int team2Goals
 Match : setTeam1(String[])
@@ -36,7 +58,5 @@ Match : void setGoals1(int)
 Match : void setGoals2(int)
 Match : void getGoals1()
 Match : void getGoals2()
-
-
 
 @enduml
