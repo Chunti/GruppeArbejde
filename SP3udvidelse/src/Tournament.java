@@ -15,7 +15,5 @@ public abstract class Tournament {
         return numbers;
     }
 
-    abstract Integer[] createTournamentStructure(int numberOfTeams);
-
-    //abstract void addMatch(Team team1, Team team2);
+    abstract Team[] createTournamentStructure(Team[] team);
 }

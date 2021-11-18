@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Controller {
@@ -22,8 +21,9 @@ public class Controller {
         System.out.println("What should the name of the tournament be?");
         String tournamentName = scan.nextLine();
         KnockOut knockOut = new KnockOut(tournamentName);
-        ArrayList matches = data.getTeams(8);
-        Integer[] teams = knockOut.createTournamentStructure(8);
+        Team[] teamData = data.getTeams(8);
+        Team[] teams = knockOut.createTournamentStructure(teamData);
+
     }
 
 

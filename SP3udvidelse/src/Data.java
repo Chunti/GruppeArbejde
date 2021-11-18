@@ -10,11 +10,17 @@ public class Data {
 
     }
 
-    public ArrayList getTeams(int numberOfteams) {
-        ArrayList matches = new ArrayList<Match>();
+    public Team[] getTeams(int numberOfteams) {
+        Team[] team = new Team[numberOfteams];
         for (int i = 0; i < numberOfteams; i++) {
-           // matches.add(connector.);
+            team[i] = new Team(getSpecificTeam(i)[1],getSpecificTeam(i)[2],getSpecificTeam(i)[3]);
         }
-        return matches;
+        return team;
+    }
+
+    public String[] getSpecificTeam(int teamID){
+        String[] teamData = connector.readTeamData();
+        String[] str = teamData[teamID].split(",");
+        return str;
     }
 }

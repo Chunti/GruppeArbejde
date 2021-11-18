@@ -11,15 +11,13 @@ public class KnockOut extends Tournament{
     }
 
     @Override
-    Integer[] createTournamentStructure(int numberOfTeams) {
-        Integer[] intArray = new Integer[numberOfTeams];
-        for (int i = 0; i < numberOfTeams; i++) {
-            intArray[i] = i;
+    Team[] createTournamentStructure(Team[] team) {
+        List<Team> teamShuffle = Arrays.asList(team);
+        Collections.shuffle(teamShuffle);
+        for (int i = 0; i < teamShuffle.size(); i++) {
+            team[i] = teamShuffle.get(i);
         }
-        List<Integer> intList = Arrays.asList(intArray);
-        Collections.shuffle(intList);
-        intList.toArray(intArray);
-        return intArray;
+        return team;
     }
     @Override
     public String toString(){

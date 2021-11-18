@@ -7,11 +7,11 @@ public class DBConnector {
     static final String DB_URL = "jdbc:mysql://localhost/SP3";
 
     //  Database credentials
-    static final String USER = "root";
+    static final String USER = "Chunti";
     static final String PASS = "Hej12345";
 
 
-    public String[] readFieldData() {
+    public String[] readTeamData() {
         String[] field_data = new String[40];
         Connection conn = null;
         Statement stmt = null;
@@ -34,7 +34,7 @@ public class DBConnector {
             //STEP 5: Extract data from result set
             while(rs.next()){
                 //Retrieve by column name
-                int id  = rs.getInt("id");
+                int id  = rs.getInt("team_id");
                 String team = rs.getString("TeamName");
                 String player1 = rs.getString("Player1");
                 String player2 = rs.getString("Player2");
@@ -73,8 +73,8 @@ public class DBConnector {
 
     /*public void saveGameData(ArrayList<Tournament> tournaments ){
         Connection conn = null;
-        String sql = "insert into Player(id,name,balance,position,isNext)) "
-                + "VALUES (?,?,?,?,?) ON DUPLICATE KEY UPDATE balance=?,position=?,isNext=?";
+        String sql = "insert into Player(team_id,TeamName,Player1,Player2)) "
+                + "VALUES (?,?,?,?) ";
 
         try{
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
