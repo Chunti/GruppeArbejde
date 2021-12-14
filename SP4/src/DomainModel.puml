@@ -1,0 +1,25 @@
+@startuml
+
+Main --* UI
+UI --* Controller
+Controller --* Character
+Controller --* NPC
+Controller *--* Rooms
+Rooms --* Encounter
+
+Character --* Warrior
+
+NPC --* Enemies
+NPC --* Allies
+
+Items *-- Warrior
+Items *-- Allies
+Items *-- Enemies
+Items *-- Rooms
+
+Encounter --* Objects
+
+Battle --* Encounter
+Battle --* Calculation
+
+@enduml
