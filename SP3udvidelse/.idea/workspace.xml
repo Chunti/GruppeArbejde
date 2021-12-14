@@ -95,7 +95,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -130,7 +130,13 @@
       <workItem from="1637143693174" duration="14601000" />
       <workItem from="1637222708707" duration="10295000" />
       <workItem from="1637245969445" duration="38000" />
-      <workItem from="1637246040858" duration="8519000" />
+      <workItem from="1637246040858" duration="9243000" />
+      <workItem from="1638439065513" duration="605000" />
+      <workItem from="1638519546273" duration="603000" />
+      <workItem from="1638871172932" duration="1422000" />
+      <workItem from="1638955817942" duration="1256000" />
+      <workItem from="1639054508144" duration="664000" />
+      <workItem from="1639341385301" duration="1100000" />
     </task>
     <servers />
   </component>
