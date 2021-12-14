@@ -1,10 +1,11 @@
 public class Warrior extends PC{
     public Warrior(String name) {
         super.name = name;
+        super.lvl = 1;
         super.hp = 50;
         super.strength = 10;
         super.defence = 10;
-        super.lvl = 1;
+
     }
 
     @Override
@@ -45,6 +46,14 @@ public class Warrior extends PC{
     @Override
     void gainExperience(int experience) {
         super.experience += experience;
+        if(experience>500*(lvl*150)){
+            super.experience -= 500*(lvl*150);
+            lvl +=1;
+            hp += 2;
+            strength += 2;
+            defence += 1;
+            System.out.println("Level up! You are now level " + lvl);
+        }
     }
 
     @Override

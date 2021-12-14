@@ -5,7 +5,7 @@ public class Battle {
     public Battle(PC player, Enemies enemies) {
         this.player = player;
         this.enemies = enemies;
-        Attack attack = new Attack(player,enemies);
+        attack = new Attack(player,enemies);
     }
 
     public boolean attackEnemies(){
@@ -25,5 +25,14 @@ public class Battle {
         return fleenumber >= 6 + number;
     }
 
+    public void finishBattle(){
+        System.out.println("You killed the monster! You gained " + enemies.getExperience() + " experience");
+        player.gainExperience(enemies.getExperience());
+        int itemRoll = (int)(100*Math.random()+1);
+        if (itemRoll <40) {
+            player.inventory.addItem();
+            System.out.println("You received an item!");
+        }
 
+    }
 }

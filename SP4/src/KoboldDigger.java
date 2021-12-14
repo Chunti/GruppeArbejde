@@ -11,8 +11,4 @@ public class KoboldDigger extends Enemies{
         super.experience = 100 + (50*lvl);
         super.lvl = lvl;
     }
-
-    public int specialAttack(){
-        return strength+5 + (lvl/2);
-    }
 }

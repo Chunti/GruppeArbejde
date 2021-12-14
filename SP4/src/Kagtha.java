@@ -24,4 +24,8 @@ public class Kagtha extends NPC{
                 "You must continue the mission here - " +
                 "I am too valuable to risk my life against petty criminals like these.");
     }
+
+    public void dialog3(){
+        System.out.println("Lok'tar ogar!");
+    }
 }

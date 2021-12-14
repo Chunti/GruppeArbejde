@@ -8,7 +8,15 @@ public class Items {
     boolean weapon = false;
     ItemRoller itemRoller = new ItemRoller();
 
-    public Items() {
+    public Items(int number) {
+        if(number == 2) createItem();
+        else if (number == 1) createStarterWeapon();
+        else createStarterArmor();
+    }
+
+
+
+    public void createItem(){
         Integer[] data;
         int roll = (int)(200*Math.random()+1);
         if (roll > 100) weapon = true;
@@ -48,7 +56,18 @@ public class Items {
         damage = data[0];
         hp = data[1];
         defence = data[2];
-
+    }
+    private void createStarterWeapon() {
+        damage = 2;
+        hp = 2;
+        defence = 0;
+        weapon = true;
+    }
+    private void createStarterArmor() {
+        damage = 0;
+        hp = 2;
+        defence = 2;
+        weapon = false;
     }
 
 }

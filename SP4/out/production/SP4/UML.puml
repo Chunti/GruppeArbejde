@@ -1,0 +1,76 @@
+@startuml
+
+abstract class Character
+abstract class PC
+abstract class NPC
+abstract class Rooms
+Main --* UI
+
+UI --* Controller
+UI --* PCController
+
+PCController --* NPC
+PCController --* PC
+Controller *--* PCController
+Controller --* Rooms
+Controller --* Battle
+
+Character --* PC
+Character --* NPC
+
+PC --* Warrior
+
+Inventory --* Items
+Inventory *-- NPC
+Inventory *-- PC
+Inventory *-- Objects
+
+Rooms --* Encounter
+
+NPC --* Enemies
+NPC --* Allies
+
+Encounter --* Objects
+
+Battle *-- Encounter
+Battle --* Attack
+
+Main : UI ui
+
+UI : Controller controller
+
+PCController : PC pc
+PCController : NPC npc
+Controller : Battle battle
+Controller : Rooms rooms
+
+Rooms : Encounter encounter
+Rooms : int ID
+
+Encounter : Objects objects
+Encounter : Battle battle
+
+Battle : Attack attack
+
+Character : Battle battle
+Character : String name
+Character : int hp
+Character : int strength
+Character : int defence
+
+NPC : Allies allies
+NPC : Enemies enemies
+
+PC : Warrior warrior
+
+Inventory : Items items
+
+Items : int ID
+Items : String name
+Items : int damage
+Items : int defence
+Items : boolean specialEffect
+
+
+
+@enduml

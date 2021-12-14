@@ -6,7 +6,7 @@ public class Inventory {
     public Inventory(){}
 
     public void addItem(){
-        items.add(new Items());
+        items.add(new Items(2));
     }
 
     public void showItems(){
@@ -18,5 +18,9 @@ public class Inventory {
                                 "\nDefence: " + items.get(i).defence);
         }
 
+    }
+
+    public Items getItem(int number) {
+        return items.get(number-1);
     }
 }
