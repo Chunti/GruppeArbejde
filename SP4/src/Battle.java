@@ -10,7 +10,6 @@ public class Battle {
 
     public boolean attackEnemies(){
         boolean enemyIsDead = attack.playerAttack();
-        if (enemyIsDead)player.experience += enemies.experience;
         return enemyIsDead;
     }
 
@@ -29,7 +28,7 @@ public class Battle {
         System.out.println("You killed the monster! You gained " + enemies.getExperience() + " experience");
         player.gainExperience(enemies.getExperience());
         int itemRoll = (int)(100*Math.random()+1);
-        if (itemRoll <40) {
+        if (itemRoll <100) {
             player.inventory.addItem();
             System.out.println("You received an item!");
         }

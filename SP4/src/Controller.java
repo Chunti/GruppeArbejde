@@ -7,7 +7,7 @@ public class Controller {
     static int currentRoom = 0;
     Battle battle;
     PC player;
-    boolean repeat = true;
+    boolean repeat;
 
 
     public Controller(PC player) {
@@ -16,11 +16,13 @@ public class Controller {
     }
 
     public void roomChoices(){
+        repeat = true;
         while (repeat){
             System.out.println("You are in room " + currentRoom + ". What do you want to do?");
             System.out.println("1. Search room for stairs or monsters?");
             System.out.println("2. Go to the resting spot?");
             System.out.println("3. Go to the next room?");
+            System.out.println("0. Go to main menu");
             int choice = scan.nextInt();
             switch (choice){
                 case 1:
@@ -70,7 +72,10 @@ public class Controller {
                     else battle.finishBattle();
                     break;
                 case 2:
-                    if(battle.flee()) System.out.println("You got away safely");
+                    if(battle.flee()) {
+                        System.out.println("You got away safely");
+                        enemyDead = true;
+                    }
                     else {
                         System.out.println("You couldn't get away");
                         playerIsDead = battle.attackPlayer();

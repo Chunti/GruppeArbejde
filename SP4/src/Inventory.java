@@ -12,7 +12,7 @@ public class Inventory {
     public void showItems(){
         for (int i = 0; i < items.size(); i++) {
 
-            System.out.println(i + ". Name: " + items.get(i).name +
+            System.out.println((i+1) + ". Name: " + items.get(i).name +
                                 "\nDamage: " + items.get(i).damage +
                                 "\nHP: " + items.get(i).hp +
                                 "\nDefence: " + items.get(i).defence);

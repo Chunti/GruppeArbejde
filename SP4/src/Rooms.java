@@ -3,6 +3,7 @@ public class Rooms {
     int floor;
     int koboldDiggerChance;
     int ogreHenchmanChance;
+    int stairsChance;
     PC player;
     Encounter encounter;
 
@@ -23,11 +24,13 @@ public class Rooms {
 
     private void createRoom() {
         koboldDiggerChance = 70;
+        stairsChance = 30;
     }
 
     private void createHardLevel() {
         koboldDiggerChance = 50;
         ogreHenchmanChance = 30;
+        stairsChance = 20;
     }
 
     private void createBossLevel() {
@@ -35,10 +38,14 @@ public class Rooms {
     }
 
     public boolean searchRoom(){
-        int roll = (int)(100*Math.random()+1);
+        if(stairsFound){
+            stairsChance = 0;
+        }
+        int numberroller = koboldDiggerChance+ogreHenchmanChance+stairsChance;
+        int roll = (int)(numberroller*Math.random()+1);
         if(roll >koboldDiggerChance+ogreHenchmanChance) {
-            stairsFound =true;
-            encounter.nextFloorFound();
+            this.stairsFound =true;
+            System.out.println("You found the stair to the next room.");
             return false;
         }
         else if(roll > koboldDiggerChance){

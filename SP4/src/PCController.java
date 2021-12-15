@@ -6,7 +6,7 @@ public class PCController {
     Inventory inventory;
     Kagtha kagtha = new Kagtha();
     MissMayhem missMayhem = new MissMayhem();
-    boolean repeat = true;
+    boolean repeat;
 
     public PCController(PC player) {
         this.player = player;
@@ -14,6 +14,7 @@ public class PCController {
     }
 
     public void characterChoices() {
+        repeat = true;
         while(repeat){
             System.out.println("What do you want to do?");
             System.out.println("1. Check your inventory?");
@@ -24,12 +25,12 @@ public class PCController {
             int choice = scan.nextInt();
             switch (choice){
                 case 1:
-                    inventory.showItems();
+                    player.inventory.showItems();
                     break;
                 case 2:
                     System.out.println("Which item do you want to equip?");
                     int number = scan.nextInt();
-                    player.equipItem(inventory.getItem(number));
+                    player.equipItem(player.inventory.getItem(number));
                     break;
                 case 3:
                     if(Controller.currentRoom == 0) interactWithNPC();

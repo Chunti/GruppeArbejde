@@ -46,8 +46,9 @@ public class Warrior extends PC{
     @Override
     void gainExperience(int experience) {
         super.experience += experience;
-        if(experience>500*(lvl*150)){
-            super.experience -= 500*(lvl*150);
+        int nextLvl = 500+(lvl*150);
+        if(super.experience>nextLvl){
+            super.experience -= nextLvl;
             lvl +=1;
             hp += 2;
             strength += 2;

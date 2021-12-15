@@ -1,7 +1,7 @@
 public class KoboldDigger extends Enemies{
 
     public KoboldDigger(int playerlvl){
-        int lvl = (int) (5*Math.random() + (2-playerlvl));
+        int lvl = (int) (5*Math.random() + (playerlvl-2));
         if(lvl < 1) lvl =1;
 
         super.name = "Kobold Digger";

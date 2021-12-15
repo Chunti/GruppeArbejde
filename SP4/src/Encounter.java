@@ -11,9 +11,9 @@ public class Encounter {
         return battle;
     }
 
-    public void nextFloorFound() {
+    /*public void nextFloorFound() {
 
-    }
+    }*/
 
     public Battle getBattle() {
         return battle;

@@ -1,7 +1,7 @@
 public class OgreHenchman extends Enemies{
 
     public OgreHenchman(int playerlvl){
-        int lvl = (int) (5*Math.random() + (2-playerlvl));
+        int lvl = (int) (5*Math.random() + (playerlvl-2));
         if(lvl < 1) lvl =1;
 
         super.name = "Ogre Henchman";
