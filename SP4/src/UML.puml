@@ -21,16 +21,21 @@ Character --* NPC
 PC --* Warrior
 
 Inventory --* Items
-Inventory *-- NPC
 Inventory *-- PC
-Inventory *-- Objects
 
 Rooms --* Encounter
 
 NPC --* Enemies
 NPC --* Allies
 
-Encounter --* Objects
+Allies --* Kagtha
+Allies --* MissMayhem
+
+Enemies --* koboldDigger
+Enemies --* OgreHenchman
+
+Items --* ItemRoller
+
 
 Battle *-- Encounter
 Battle --* Attack
@@ -38,39 +43,136 @@ Battle --* Attack
 Main : UI ui
 
 UI : Controller controller
+UI : Scanner scan
+UI : PCController pcController
+UI : boolean endGame
+UI : Warrior warrior
+UI : void menu()
+
+Controller : Battle battle
+Controller : Scanner scan
+Controller : ArrayList<Rooms> rooms
+Controller : int currentRoom
+Controller : PC player
+Controller : boolean repeat
+Controller : boolean stairsFound
+Controller : void roomChoice()
+Controller : void battleChoice()
+Controller : void GameOver()
 
 PCController : PC pc
-PCController : NPC npc
-Controller : Battle battle
-Controller : Rooms rooms
+PCController : Scanner scan
+PCController : Inventory inventory
+PCController : Kagtha kagtha
+PCController : MissMayhem missMayhem
+PCController : boolean repeat
+PCController : void characterChoices()
+PCController : void interactWithNPC()
+PCController : void missMayhemInteractions()
+PCController : void kagthaInteractions()
 
-Rooms : Encounter encounter
-Rooms : int ID
-
-Encounter : Objects objects
-Encounter : Battle battle
-
-Battle : Attack attack
-
-Character : Battle battle
 Character : String name
 Character : int hp
 Character : int strength
 Character : int defence
+Character : int lvl
+Character : void setName()
+Character : String getName()
+Character : void setHp()
+Character : int getHp()
+Character : void setStrength()
+Character : int getStrength()
+Character : void setDefence()
+Character : int getDefence()
+Character : void addLvl()
 
-NPC : Allies allies
-NPC : Enemies enemies
+Encounter : Battle battle
+Encounter : PC player
+Encounter : OgreHenchman ogreHencman
+Encounter : KoboldDigger koboldDigger
+Encounter : createBattle()
+Encounter : getBattle()
 
-PC : Warrior warrior
+Enemies : int experience
+Enemies : int damageTaken
+Enemies : getExperience()
+Enemies : specialAttack()
 
-Inventory : Items items
+Inventory : ArrayList<Items> Items
+Inventory : void addItem()
+Inventory : void showItems()
+Inventory : getItem()
 
-Items : int ID
 Items : String name
 Items : int damage
+Items : int hp
 Items : int defence
-Items : boolean specialEffect
+Items : boolean weapon
+Items : ItemRoller itemRoller
+Items : createItem()
+Items : createStarterWeapon()
+Items : createStarterArmor()
 
+Kagtha : void dialog1()
+Kagtha : void dialog2()
+Kagtha : void dialog3()
 
+ItemRoller : Integer[] epicItem
+ItemRoller : Integer[] rareItem
+ItemRoller : Integer[] uncommonItem
+ItemRoller : Integer[] commonItem
+ItemRoller : Integer[] epicArmor
+ItemRoller : Integer[] rareArmor
+ItemRoller : Integer[] uncommonArmor
+ItemRoller : Integer[] commonArmor
+
+MissMayhem : void dialog1()
+MissMayhem : void dialog2()
+MissMayhem : void dialog3()
+MissMayhem : void dialog4()
+
+PC : int experience
+PC : int damageTaken
+PC : Itmes weapon
+PC : Items armor
+PC : void gainExperience()
+PC : void equipItem()
+
+Rooms : Encounter encounter
+Rooms : PC player
+Rooms : boolean stairsFound
+Rooms : int floor
+Rooms : koboldDiggerChance
+Rooms : ogreHenchmanChance
+Rooms : int stairsChance
+Rooms : void createRestingSpot()
+Rooms : void createRoom()
+Rooms : void createHardLevel()
+Rooms : void createBossLevel()
+Rooms : boolean searchRoom()
+Rooms : void goToRestingSpot()
+Rooms : getBattle()
+
+Warrior : void setHp()
+Warrior : void setStrength()
+Warrior : void setDefence()
+Warrior : String getName()
+Warrior : int getHp()
+Warrior : int getStrength()
+Warrior : int getDefence()
+Warrior : void gainExperience()
+Warrior : void equipItem()
+
+Attack : PC player
+Attack : Enemies enemies
+Attack : boolean enemiesAttack()
+Attack : boolean playerAttack()
+Battle : Attack attack
+Battle : PC player
+Battle : Enemies enemies
+Battle : boolean attackEnemies()
+Battle : boolean attackPlayer()
+Battle : boolean flee()
+Battle : void finishBattle()
 
 @enduml
